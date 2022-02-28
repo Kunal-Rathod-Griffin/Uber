@@ -1,24 +1,167 @@
 create database uber_final;
 use uber_final;
-drop table Driver;
 
-/*
-create table Driver (
-	id INT,
-	Name VARCHAR(50) not null, 
-	Phone_No VARCHAR(50) not null unique,
-	
-    Aadhaar_Number VARCHAR(50) not null unique,
-    Age INT check(Age >= 18),
+-- drop table drives;
 
-	Address VARCHAR(50) not null,
-	Experience INT default 0, 
-	Rating DECIMAL(2,1) default 0,
-	Earning VARCHAR(50) default 0,
-    primary key(id)
+drop table drives;
+drop table pass_trip;
+drop table payment;
+
+create table Drives(
+
+	Driver_ID INT,
+    vin VARCHAR(50),
+    foreign key(Driver_ID) references Driver(id),
+    foreign key(vin) references vehicle(vin),
+	primary key(driver_id, vin)
     
 );
-*/
+
+
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('1', '0avpi0qpc5bi', '300');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('2', '1r4t2bsbypkh', '400');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('3', '4185pgyuhmla', '500');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('4', '5gk7k6o82rnj', '600');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('5', '7wv3w7cohpgw', '700');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('6', '8iaeonn65ock', '800');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('7', '8mwv5yjsyofz', '900');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('8', '9qktcuz8dqp9', '1000');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('9', 'ab3o2zymwobf', '1100');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('10', 'anrqhd6soeue', '1200');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('11', 'bfg6dji64mqw', '1300');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('12', 'c4m9kmzckifo', '1400');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('13', 'elzlpouam0yb', '1500');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('14', 'f9k9qxym4ku1', '1600');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('15', 'f9qmb1znibt7', '1700');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('16', 'g3ua06i43isc', '1800');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('17', 'g5bfq5xwvn8j', '1900');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('18', 'gwe79su9li24', '2000');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('19', 'hqcu3f1qkvcn', '2100');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('20', 'i1kadm8rv8mb', '2200');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('21', 'idtc83ymr8rj', '2300');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('22', 'it3lt3wufgrb', '2400');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('23', 'j231sb7rst8t', '2500');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('24', 'kn23to6e8kna', '2600');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('25', 'l6rpc8w37214', '2700');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('26', 'lf3fa7ysro4y', '2800');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('27', 'lkhn5zso0v4b', '2900');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('28', 'm5rorxmkbxqw', '3000');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('29', 'n47zu0bgsywh', '350');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('30', 'ns53x9l550hf', '450');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('31', 'ny5e9pninyo9', '550');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('32', 'pcmfy0c2dp9m', '650');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('33', 'pesv7mk0bhqa', '750');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('34', 'rorx7r53awwc', '850');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('35', 'smurgzlmav60', '950');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('36', 'udeywaw2rs75', '1050');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('37', 'uibvrk12fqrr', '1150');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('38', 'v024ewrq8piq', '1250');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('39', 'v21vzp77hmq7', '1350');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('40', 'vbptwyb5of97', '1450');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('41', 'wxphxwmaduga', '1550');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('42', 'x64x26hj70ke', '1650');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('43', 'xg2tlodnijc3', '1750');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('44', 'xp5mczgcafe3', '1850');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('45', 'z5eh2vtqwhzz', '1950');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('46', 'z8gbwkten665', '2050');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('47', 'zfrkhzpj7cri', '2150');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('48', 'zkdjl2cmk4zl', '2250');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('49', 'zmwfmculxi45', '2350');
+UPDATE payment SET trip_id = '35' WHERE (trip_id = '34') and (transection_id = 'rorx7r53awwc');
+UPDATE payment SET trip_id = '36' WHERE (trip_id = '35') and (transection_id = 'smurgzlmav60');
+UPDATE payment SET trip_id = '37' WHERE (trip_id = '36') and (transection_id = 'udeywaw2rs75');
+UPDATE payment SET trip_id = '38' WHERE (trip_id = '37') and (transection_id = 'uibvrk12fqrr');
+UPDATE payment SET trip_id = '39' WHERE (trip_id = '38') and (transection_id = 'v024ewrq8piq');
+UPDATE payment SET trip_id = '40' WHERE (trip_id = '39') and (transection_id = 'v21vzp77hmq7');
+UPDATE payment SET trip_id = '41' WHERE (trip_id = '40') and (transection_id = 'vbptwyb5of97');
+UPDATE payment SET trip_id = '42' WHERE (trip_id = '41') and (transection_id = 'wxphxwmaduga');
+UPDATE payment SET trip_id = '43' WHERE (trip_id = '42') and (transection_id = 'x64x26hj70ke');
+UPDATE payment SET trip_id = '44' WHERE (trip_id = '43') and (transection_id = 'xg2tlodnijc3');
+UPDATE payment SET trip_id = '45' WHERE (trip_id = '44') and (transection_id = 'xp5mczgcafe3');
+UPDATE payment SET trip_id = '46' WHERE (trip_id = '45') and (transection_id = 'z5eh2vtqwhzz');
+UPDATE payment SET trip_id = '47' WHERE (trip_id = '46') and (transection_id = 'z8gbwkten665');
+UPDATE payment SET trip_id = '48' WHERE (trip_id = '47') and (transection_id = 'zfrkhzpj7cri');
+UPDATE payment SET trip_id = '49' WHERE (trip_id = '48') and (transection_id = 'zkdjl2cmk4zl');
+UPDATE payment SET trip_id = '50' WHERE (trip_id = '49') and (transection_id = 'zmwfmculxi45');
+INSERT INTO payment(trip_id, transection_id, fare)  VALUES ('34', 'q9zx2ak3ml0w', '2450');
+
+INSERT INTO drives (Driver_ID, vin) VALUES ('1', '19UUA56942A008828');
+INSERT INTO drives (Driver_ID, vin) VALUES ('2', '19UUA66265A479053');
+INSERT INTO drives (Driver_ID, vin) VALUES ('3', '19UYA42773A171863');
+INSERT INTO drives (Driver_ID, vin) VALUES ('4', '1B3CB3HA4AD185798');
+INSERT INTO drives (Driver_ID, vin) VALUES ('5', '1D7CW3BK7AS183212');
+INSERT INTO drives (Driver_ID, vin) Values ('6', '1D7CW3GK7AS488881');
+INSERT INTO drives (Driver_ID, vin) VALUES ('7', '1FMJK1F51AE586762');
+INSERT INTO drives (Driver_ID, vin) VALUES ('8', '1FTSW3A51AE020827');
+INSERT INTO drives (Driver_ID, vin) VALUES ('9', '1G6DF577180732281');
+INSERT INTO drives (Driver_ID, vin) VALUES ('10', '1G6DJ8EY8B0750599');
+INSERT INTO drives (Driver_ID, vin) VALUES ('11', '1G6DL8E34C0285318');
+INSERT INTO drives (Driver_ID, vin) VALUES ('12', '1G6DV5EP2E0061608');
+INSERT INTO drives (Driver_ID, vin) VALUES ('13', '1GD02ZCG9DZ976976');
+INSERT INTO drives (Driver_ID, vin) VALUES ('14', '1GKS1HE02BR401307');
+INSERT INTO drives (Driver_ID, vin) VALUES ('15', '1GTN1TEX2DZ101911');
+INSERT INTO drives (Driver_ID, vin) VALUES ('16', '1GYFC36239R844774');
+INSERT INTO drives (Driver_ID, vin) VALUES ('17', '1GYS4KEF5ER135638');
+INSERT INTO drives (Driver_ID, vin) VALUES ('18', '1HGCR2E78EA746980');
+INSERT INTO drives (Driver_ID, vin) VALUES ('19', '3D7TP2CT4BG863463');
+INSERT INTO drives (Driver_ID, vin) VALUES ('20', '3GTXKYEJ3AG848329');
+INSERT INTO drives (Driver_ID, vin) VALUES ('21', '3GYEK63N03G441292');
+INSERT INTO drives (Driver_ID, vin) VALUES ('22', '3GYFNCEYXBS573179');
+INSERT INTO drives (Driver_ID, vin) VALUES ('23', '5LMJJ3H58BE392677');
+INSERT INTO drives (Driver_ID, vin) VALUES ('24', 'JN1CV6AP6CM827031');
+INSERT INTO drives (Driver_ID, vin) VALUES ('25', 'JTEBU4BF4DK493192');
+INSERT INTO drives (Driver_ID, vin) VALUES ('26', 'JTJBM7FX6C5376121');
+INSERT INTO drives (Driver_ID, vin) VALUES ('27', 'SALSF2D42AA826143');
+INSERT INTO drives (Driver_ID, vin) VALUES ('28', 'TRUVD38J791101767');
+INSERT INTO drives (Driver_ID, vin) VALUES ('29', 'TRUWT28N321153231');
+INSERT INTO drives (Driver_ID, vin) VALUES ('30', 'WA1CV94L37D377149');
+INSERT INTO drives (Driver_ID, vin) VALUES ('31', 'WA1DGAFP5DA072152');
+INSERT INTO drives (Driver_ID, vin) VALUES ('32', 'WA1YD64B63N753278');
+INSERT INTO drives (Driver_ID, vin) VALUES ('33', 'WAUAFAFC3CN279541');
+INSERT INTO drives (Driver_ID, vin) VALUES ('34', 'WAUD2AFD6DN711932');
+INSERT INTO drives (Driver_ID, vin) VALUES ('35', 'WAUKF98E95A803383');
+INSERT INTO drives (Driver_ID, vin) VALUES ('36', 'WAULV44E87N991891');
+INSERT INTO drives (Driver_ID, vin) VALUES ('37', 'WAUVC68E72A904230');
+INSERT INTO drives (Driver_ID, vin) VALUES ('38', 'WAUVFAFH7DN980307');
+INSERT INTO drives (Driver_ID, vin) VALUES ('39', 'WBA3A5C53EJ184377');
+INSERT INTO drives (Driver_ID, vin) VALUES ('40', 'WBA3B3G51DN388923');
+INSERT INTO drives (Driver_ID, vin) VALUES ('41', 'WBA3D5C52FK349337');
+INSERT INTO drives (Driver_ID, vin) VALUES ('42', 'WBAPL5C58BA283106');
+INSERT INTO drives (Driver_ID, vin) VALUES ('43', 'WBS3U9C57FJ616402');
+INSERT INTO drives (Driver_ID, vin) VALUES ('44', 'WBSCL93401L402164');
+INSERT INTO drives (Driver_ID, vin) VALUES ('45', 'WBSKG9C51BE638594');
+INSERT INTO drives (Driver_ID, vin) VALUES ('46', 'WDDEJ7KBXBA853714');
+INSERT INTO drives (Driver_ID, vin) VALUES ('47', 'WDDGF4HB9EG436179');
+INSERT INTO drives (Driver_ID, vin) VALUES ('48', 'WDDUG7GB9FA490945');
+INSERT INTO drives (Driver_ID, vin) VALUES ('49', 'WP0AA2A97DS371015');
+INSERT INTO drives (Driver_ID, vin) VALUES ('50', 'WVGEF9BP9FD668881');
+
+
+-- drop table Pass_trip;
+create table Pass_trip(
+
+	phone_number varchar(50),
+    trip_id int,
+    driver_id int,
+    foreign key(phone_number) references passenger(Phone_number),
+    foreign key(trip_id) references trip(id),
+    foreign key(driver_id) references driver(id),
+    rating int ,
+    primary key(phone_number, trip_id, driver_id)
+
+);
+
+-- drop table payment;
+create table Payment(
+
+	trip_id int,
+    transection_id varchar(50),
+    Fare int,
+    foreign key(trip_id) references trip(id),
+    foreign key(transection_id) references transections(transection_id),
+	primary key(trip_id, transection_id)
+);
+
 
 create table Passenger (
 	Name VARCHAR(50) not null,
@@ -27,7 +170,6 @@ create table Passenger (
 	Age INT, 
 	Mode_of_payment VARCHAR(50) default 'CASH',
     primary key(Phone_Number)
-    
 );
 -- Passenger done
 -- Vehicle done
@@ -67,6 +209,7 @@ create table Vehicle (
 --     
 -- );
 
+drop table Transections;
 create table Transections (
 	 transection_id VARCHAR(50),
 	primary key(transection_id),
@@ -74,16 +217,19 @@ create table Transections (
 	mode_of_payment VARCHAR(50) default 'CASH'
 );
 
+
+drop table trip;
 create table trip (
 	id INT,
-	booking_time time,
-	pickup_time time,
-	waiting_time INT,
-	trip_date DATE,
-	total_time INT,
-	pickup_location VARCHAR(50),
-	drop_location VARCHAR(50),
-	distance DECIMAL(5,2),
+	primary key(id),
+	booking_time time ,
+	pickup_time time ,
+	waiting_time INT ,
+	trip_date DATE ,
+	total_time INT , 
+	pickup_location VARCHAR(50) ,
+	drop_location VARCHAR(50) ,
+	distance DECIMAL(5,2) ,
     
     check(pickup_time > booking_time)
 );
@@ -100,6 +246,127 @@ create table Driver (
 	Rating DECIMAL(2,1),
 	Earning DECIMAL(8,2)
 );
+
+create table Drives(
+
+	Driver_ID INT,
+    vin VARCHAR(50),
+    foreign key(Driver_ID) references Driver(id),
+    foreign key(vin) references vehicle(vin)
+
+);
+
+create table Pass_trip(
+
+	phone_number varchar(50),
+    trip_id int,
+    driver_id int,
+    rating int 
+
+);
+
+insert into Transections (transection_id, coupon, mode_of_payment) values ('z8gbwkten665', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('g3ua06i43isc', 'PEHLA_SAFAR_50', 'UPI');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('it3lt3wufgrb', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('rorx7r53awwc', 'PEHLA_SAFAR_50', 'Card');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('ab3o2zymwobf', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('9qktcuz8dqp9', 'PEHLA_SAFAR_50', 'UPI');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('8mwv5yjsyofz', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('zmwfmculxi45', 'PEHLA_SAFAR_50', 'Card');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('l6rpc8w37214', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('ny5e9pninyo9', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('j231sb7rst8t', 'PEHLA_SAFAR_50', 'Card');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('pcmfy0c2dp9m', 'PEHLA_SAFAR_50', 'Card');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('xg2tlodnijc3', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('zkdjl2cmk4zl', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('q9zx2ak3ml0w', 'PEHLA_SAFAR_50', 'UPI');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('v024ewrq8piq', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('v21vzp77hmq7', 'PEHLA_SAFAR_50', 'UPI');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('i1kadm8rv8mb', 'PEHLA_SAFAR_50', 'Card');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('m5rorxmkbxqw', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('wxphxwmaduga', 'PEHLA_SAFAR_50', 'UPI');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('1r4t2bsbypkh', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('4185pgyuhmla', 'PEHLA_SAFAR_50', 'Card');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('kn23to6e8kna', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('elzlpouam0yb', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('bfg6dji64mqw', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('lkhn5zso0v4b', 'PEHLA_SAFAR_50', 'Card');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('x64x26hj70ke', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('pesv7mk0bhqa', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('zfrkhzpj7cri', 'PEHLA_SAFAR_50', 'UPI');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('smurgzlmav60', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('uibvrk12fqrr', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('idtc83ymr8rj', 'PEHLA_SAFAR_50', 'Card');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('n47zu0bgsywh', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('z5eh2vtqwhzz', 'PEHLA_SAFAR_50', 'UPI');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('anrqhd6soeue', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('g5bfq5xwvn8j', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('c4m9kmzckifo', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('lf3fa7ysro4y', 'PEHLA_SAFAR_50', 'Card');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('xp5mczgcafe3', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('8iaeonn65ock', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('f9k9qxym4ku1', 'PEHLA_SAFAR_50', 'Card');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('udeywaw2rs75', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('ns53x9l550hf', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('vbptwyb5of97', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('gwe79su9li24', 'PEHLA_SAFAR_50', 'UPI');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('7wv3w7cohpgw', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('0avpi0qpc5bi', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('5gk7k6o82rnj', 'PEHLA_SAFAR_50', 'Card');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('f9qmb1znibt7', null, 'Cash');
+insert into Transections (transection_id, coupon, mode_of_payment) values ('hqcu3f1qkvcn', null, 'Cash');
+
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL31JV3890 ', 'Pink', true, true, 2007, 'Auto', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL37MN0195 ', 'Purple', true, true, 2006, 'Car', 'Bajaj', 'Petrol', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL18RW4812 ', 'Khaki', true, false, 2005, 'Car', 'Bajaj', 'CNG', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL98CW7906 ', 'Indigo', true, true, 2008, 'Car', 'Bajaj', 'Diesel', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL78WL7240 ', 'Turquoise', true, false, 2011, 'Auto', 'Bajaj', 'CNG', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL19EA3145 ', 'Mauv', true, false, 2015, 'Car', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL16WX0813 ', 'Khaki', false, false, 2020, 'Car', 'Bajaj', 'Petrol', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL64SG3192 ', 'Aquamarine', false, false, 2015, 'Car', 'Bajaj-Benz', 'CNG', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL77KE8690 ', 'Crimson', false, true, 2005, 'Car', 'Bajaj', 'CNG', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL45AP6552 ', 'Goldenrod', false, true, 2007, 'Car', 'Bajaj', 'Petrol', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL65LL4781 ', 'Indigo', false, false, 2009, 'Car', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL85LM4824 ', 'Fuscia', true, true, 2017, 'Car', 'Bajaj', 'Diesel', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL76YM2685 ', 'Blue', false, true, 2009, 'Car', 'Bajaj', 'Petrol', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL08QW6551 ', 'Blue', false, true, 2012, 'Auto', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL51EM8807 ', 'Mauv', true, true, 2019, 'Car', 'Bajaj', 'Diesel', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL57RN2028 ', 'Yellow', true, false, 2021, 'Car', 'Bajaj', 'Petrol', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL52ZX4382 ', 'Mauv', false, true, 2019, 'Auto', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL63RK9978 ', 'Goldenrod', true, true, 2009, 'Car', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL42RT0143 ', 'Orange', false, true, 2005, 'Car', 'Bajaj', 'Petrol', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL55OO0588 ', 'Maroon', false, false, 2013, 'Auto', 'Bajaj', 'CNG', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL11TF4407 ', 'Teal', true, true, 2017, 'Auto', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL86JB1813 ', 'Violet', false, false, 2013, 'Car', 'Bajaj', 'Petrol', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL10RS1272 ', 'Green', false, true, 2009, 'Car', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL60YI9379 ', 'Green', true, false, 2005, 'Car', 'Bajaj', 'Petrol', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL40CC7138 ', 'Teal', false, true, 2018, 'Car', 'Bajaj', 'Diesel', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL38MP0944 ', 'Orange', false, false,2019 , 'Car', 'Bajaj', 'CNG', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL51GX1114 ', 'Yellow', false, false, 2012, 'Car', 'Bajaj', 'Petrol', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL16EQ6966 ', 'Maroon', true, false, 2006, 'Auto', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL02NW1260 ', 'Maroon', true, false, 2005, 'Car', 'Bajaj', 'CNG', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL60MY7723 ', 'Violet', false, false, 2005, 'Car', 'Bajaj', 'Petrol', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL09DM6004 ', 'Aquamarine', false, true, 2009, 'Car', 'Bajaj', 'Diesel', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL13LP8357 ', 'Red', false, true, 2017, 'Auto', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL66UY7249 ', 'Violet', true, false, 2011, 'Bike', 'Bajaj', 'Petrol', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL52AE8696 ', 'Aquamarine', false, false, 2012, 'Car', 'Bajaj', 'Diesel', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL44OB5390 ', 'Mauv', false, false, 2008, 'Car', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL05ZS9449 ', 'Mauv', true, true, 2014, 'Bike', 'Bajaj', 'Petrol', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL23XT3710 ', 'Indigo', false, false, 2014, 'Car', 'Bajaj', 'CNG', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL93YR4729 ', 'Fuscia', false, false, 2019, 'Car', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL41QQ7253 ', 'Pink', false, true, 2020, 'Car', 'Bajaj', 'Petrol', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL72CZ8551 ', 'Goldenrod', true, false, 2008, 'Car', 'Bajaj', 'Diesel', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL49UF0768 ', 'Blue', false, false, 2010, 'Car', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL69WC7583 ', 'Puce', false, false, 2012, 'Car', 'Bajaj', 'Petrol', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL29QF4363 ', 'Mauv', true, true, 2009, 'Car', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL85WU1758 ', 'Purple', true, false, 2017, 'Car', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL80PQ2395 ', 'Mauv', false, false, 2006, 'Car', 'Bajaj', 'Diesel', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL32PV0811 ', 'Yellow', false, false, 2008, 'Bike', 'Bajaj', 'Petrol', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL25RB7703 ', 'Turquoise', true, false, 2019, 'Car', 'Bajaj', 'CNG', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL91JE1944 ', 'Yellow', true, true, 2014, 'Car', 'Bajaj', 'CNG', true);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL62EI1466 ', 'Violet', false, false, 2013, 'Car', 'Bajaj', 'Diesel', false);
+insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('DL08YC4858 ', 'Blue', true, true, 2012, 'Car', 'Bajaj', 'Diesel', false);
+
 insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (1, 'Idelle Chatainier', '5616058298', '6244 0055 7680', 42, '772 Westend Pass', 8, 0.4, 127150.48);
 insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (2, 'Alejandra Polotti', '3719003580', '9537 3665 0598', 51, '68622 Oriole Way', 3, 2.9, 39953.85);
 insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (3, 'Free Comport', '7473290479', '2770 2685 7415', 50, '38091 Jana Crossing', 5, 1.7, 82114.6);
@@ -152,58 +419,6 @@ insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience
 insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (50, 'Shela Ridewood', '3174782117', '9268 5429 2050', 52, '38 Blackbird Pass', 15, 4.3, 85084.56);
 
 
-/*
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (1, 'Immanuel Anfossi', '3212613050', '3968 1618 6824', 35, '30 Lawn Drive', 7, 3.5, '$1764.39');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (2, 'Annadiane Belderfield', '7283468533', '5222 4817 6048', 33, '5262 Lerdahl Place', 8, 2.6, '$514.32');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (3, 'Reggi Ambrosoni', '4465469650', '1996 3221 1083', 47, '15601 Hallows Point', 4, 3.3, '$1734.21');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (4, 'Alica Hentzeler', '2741178826', '6154 4446 4080', 39, '5340 Claremont Park', 9, 1.0, '$640.23');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (5, 'Elfie Illem', '3658788277', '9699 9165 4503', 28, '75 Burrows Alley', 14, 2.9, '$1996.41');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (6, 'Alistair Cuff', '9178855990', '7831 9476 5017', 19, '422 Bultman Park', 1, 0.2, '$1796.63');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (7, 'Rudie Baile', '7249442245', '6493 9199 3754', 26, '34 Di Loreto Place', 5, 3.1, '$311.15');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (8, 'Fanni Costain', '3912050345', '6935 5347 0727', 36, '17 High Crossing Terrace', 10, 1.5, '$1473.47');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (9, 'Bernette Celand', '3827583156', '9493 1730 6718', 27, '8472 Wayridge Center', 10, 0.6, '$1536.53');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (10, 'Michal Chater', '3623224407', '8541 6204 6400', 22, '29 Erie Parkway', 10, 4.9, '$393.36');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (11, 'Marabel Orth', '2784161705', '8604 4749 9477', 30, '38 Sutherland Road', 5, 0.2, '$285.58');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (12, 'Bary Trevino', '9892589647', '5605 2847 8732', 38, '5 La Follette Drive', 1, 1.9, '$565.57');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (13, 'Paten Ensor', '8681506486', '6032 5367 2930', 60, '0083 Florence Terrace', 5, 4.8, '$145.22');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (14, 'Justino Nowland', '6385695948', '4417 8606 0873', 50, '4281 Old Gate Parkway', 12, 2.0, '$1533.29');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (15, 'Diana Derham', '1497713023', '7387 7932 3450', 23, '154 Cordelia Way', 10, 4.5, '$1594.07');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (16, 'Olenolin Jellman', '4461722058', '2894 5342 2010', 33, '376 Thompson Parkway', 13, 1.6, '$865.99');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (17, 'Lindsy Salvatore', '4824630523', '6746 6321 8989', 40, '5432 Johnson Street', 7, 3.5, '$1155.02');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (18, 'Karylin Derham', '3549154279', '0481 9935 3708', 36, '48 High Crossing Park', 4, 2.9, '$1890.24');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (19, 'Alon Tingly', '6016848081', '7315 1144 7315', 50, '5901 Harper Center', 9, 1.6, '$144.29');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (20, 'Zed Buckler', '8505253327', '6018 5065 5992', 24, '3620 Cascade Drive', 13, 2.2, '$271.46');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (21, 'Harley Mallatratt', '5031023527', '0779 2187 9832', 59, '40305 Monterey Drive', 12, 4.5, '$1051.65');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (22, 'Mateo Beltzner', '2972536432', '9591 7514 0485', 58, '229 Raven Way', 2, 4.1, '$1462.95');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (23, 'Jonas Jeste', '7235058107', '0333 6785 8665', 22, '644 Meadow Ridge Hill', 10, 1.4, '$1452.23');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (24, 'Wallis Mesias', '9504749869', '5970 3187 0857', 33, '829 Karstens Park', 9, 0.2, '$964.59');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (25, 'Clemente Sanpere', '2038302576', '0640 3941 8842', 38, '6572 Armistice Circle', 4, 4.2, '$193.01');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (26, 'Brinn Kerbler', '4604460200', '7398 0749 4121', 30, '621 Almo Circle', 3, 1.4, '$831.76');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (27, 'Harrietta Hughson', '1209974167', '6499 1863 3500', 57, '21896 Carioca Hill', 1, 1.4, '$1176.96');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (28, 'Deloria Prose', '3533124818', '8259 6259 6407', 40, '060 Melody Plaza', 14, 0.4, '$189.10');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (29, 'Estevan Schlag', '3828808292', '1255 1928 3509', 42, '2037 Ludington Court', 8, 1.5, '$1584.91');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (30, 'Bruce Upfold', '8725682178', '5734 1009 1513', 42, '79537 Debra Junction', 9, 4.3, '$1985.51');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (31, 'Eldon Athersmith', '8343144463', '8971 3670 7348', 38, '5229 Ryan Way', 6, 1.1, '$1924.20');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (32, 'Viviene Danbrook', '5425660023', '9301 3828 7576', 28, '9 Lotheville Road', 3, 0.6, '$897.08');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (33, 'Iorgo Aysik', '3817495494', '3616 6768 4925', 52, '2738 Golden Leaf Junction', 2, 0.7, '$1119.87');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (34, 'Zulema Johnys', '4956520061', '6750 1358 8868', 20, '24552 Logan Drive', 8, 1.2, '$634.96');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (35, 'Silvanus Castro', '7202927680', '1272 6082 5207', 53, '2319 Parkside Pass', 1, 3.4, '$362.58');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (36, 'Rufe Mercey', '6297523227', '6847 7053 6956', 52, '4598 Clyde Gallagher Junction', 8, 3.5, '$371.17');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (37, 'Ranee Lavis', '9543925427', '7959 8368 5558', 46, '81 Montana Point', 12, 0.3, '$1363.56');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (38, 'Pietrek Crier', '7984890051', '7430 9367 6243', 42, '7215 Vidon Parkway', 10, 1.0, '$1223.45');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (39, 'Corine Patsall', '4025209548', '6427 0010 5796', 35, '03164 Fordem Pass', 11, 0.9, '$1199.15');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (40, 'Adi Franchioni', '8678909758', '2815 7122 2449', 40, '90683 5th Drive', 9, 4.0, '$202.56');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (41, 'Alyce Ventom', '6743973487', '2674 3387 2300', 57, '265 Miller Hill', 12, 4.0, '$170.50');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (42, 'Tamas Gaskarth', '7436474491', '1249 4913 6122', 47, '6390 Pennsylvania Junction', 3, 4.6, '$1904.35');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (43, 'El MacNally', '5303095469', '5550 2331 1993', 52, '66 Stang Park', 7, 1.0, '$1268.00');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (44, 'Cass Ivanitsa', '8912460800', '8254 1398 4782', 24, '49 Mallory Alley', 13, 4.4, '$634.73');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (45, 'Forester Legonidec', '3601671239', '6293 8021 8258', 35, '059 Towne Court', 10, 1.9, '$1523.71');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (46, 'Rodina Volkers', '2733340315', '3880 8349 4017', 31, '15728 Montana Road', 8, 3.4, '$826.24');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (47, 'Jephthah Mercey', '3371843386', '7675 3850 2755', 48, '50 Tony Place', 5, 3.8, '$683.51');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (48, 'Reade Plumbridge', '1969073657', '2756 0643 9536', 47, '9 Red Cloud Alley', 12, 1.5, '$1371.86');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (49, 'Faunie Stanlock', '2868580806', '0534 3722 3580', 50, '724 Ronald Regan Center', 14, 0.7, '$1216.21');
-insert into Driver (id, Name, Phone_No, Aadhaar_Number, Age, Address, Experience, Rating, Earning) values (50, 'Clemmie Penchen', '5312869110', '6021 7399 0186', 27, '47086 Donald Hill', 10, 3.5, '$550.99');
-*/
 
 insert into Trip (id, booking_time, pickup_time, waiting_time, trip_date, total_time, pickup_location, drop_location, distance) values (1, '4:12', '12:11', 16, '2021-03-10', 64, '981 Towne Avenue', '7 Aberg Avenue', 5.9);
 insert into Trip (id, booking_time, pickup_time, waiting_time, trip_date, total_time, pickup_location, drop_location, distance) values (2, '4:42', '15:21', 21, '2022-01-21', 8, '559 Oriole Parkway', '20330 Northview Parkway', 140.7);
@@ -328,7 +543,7 @@ insert into Passenger (Name, Phone_Number, Email_id, Age, Mode_of_payment) value
 insert into Passenger (Name, Phone_Number, Email_id, Age, Mode_of_payment) values ('Dael Plampeyn', '526-347-7539', 'dplampeyn1c@photobucket.com', 25, 'CARD');
 insert into Passenger (Name, Phone_Number, Email_id, Age, Mode_of_payment) values ('Karlyn Finessy', '804-182-5727', 'kfinessy1d@ebay.co.uk', 75, 'CASH');
 
-
+/*
 insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('WBSCL93401L402164', 'Indigo', false, true, 1987, 'Car', 'Lincoln', 'CNG', true);
 insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('1G6DJ8EY8B0750599', 'Yellow', true, false, 2011, 'Car', 'Toyota', 'CNG', false);
 insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('WAUAFAFC3CN279541', 'Teal', false, true, 2002, 'Car', 'Suzuki', 'CNG', false);
@@ -379,7 +594,7 @@ insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fu
 insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('WAUD2AFD6DN711932', 'Purple', true, false, 1990, 'Car', 'Saab', 'CNG', true);
 insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('5LMJJ3H58BE392677', 'Violet', false, false, 1997, 'Car', 'Dodge', 'CNG', false);
 insert into Vehicle (vin, Color, AC, WiFi, Model_year, Type, Vehicle_company, Fuel, Prime_ride) values ('WAUKF98E95A803383', 'Red', false, true, 1974, 'Car', 'Pontiac', 'CNG', true);
-
+*/
 
 
 
@@ -398,7 +613,7 @@ create table Trip (
     primary key (id)
 );
 */
-
+/*
 insert into Transections (transection_id, coupon, mode_of_payment) values ('z8gbwkten665', 'PEHLA_SAFAR_50', 'UPI');
 insert into Transections (transection_id, coupon, mode_of_payment) values ('g3ua06i43isc', 'PEHLA_SAFAR_50', 'UPI');
 insert into Transections (transection_id, coupon, mode_of_payment) values ('it3lt3wufgrb', 'PEHLA_SAFAR_50', 'UPI');
@@ -449,4 +664,4 @@ insert into Transections (transection_id, coupon, mode_of_payment) values ('0avp
 insert into Transections (transection_id, coupon, mode_of_payment) values ('5gk7k6o82rnj', 'PEHLA_SAFAR_50', 'UPI');
 insert into Transections (transection_id, coupon, mode_of_payment) values ('f9qmb1znibt7', 'PEHLA_SAFAR_50', 'UPI');
 insert into Transections (transection_id, coupon, mode_of_payment) values ('hqcu3f1qkvcn', 'PEHLA_SAFAR_50', 'UPI');
-
+*/
